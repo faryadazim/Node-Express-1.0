@@ -3,12 +3,12 @@ const cors = require('cors')
 const app = express()
 const port = process.env.port || 3000;
 
-app.use('/' , (req,res)=>{
-console.log("hello");
+app.use('/' , (req,res)=>{ 
 res.send("Abe chal jaa bsdk");
 });
 
-
+var routes = require("./src/User/routes")
+app.use ('/routes',routes)
 
 app.listen(port, (err) => {
   if (err) {
