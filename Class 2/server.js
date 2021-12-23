@@ -1,15 +1,12 @@
 var dotenv = require("dotenv")
-dotenv.config();      //connecting env with server??
+dotenv.config();
 var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser")
-//DB Connectivity
 var dbConnection = require("./src/config/Db")
 dbConnection()
-const port = process.env.PORT || 45000;
+const port = process.env.PORT || 4000;
 var app = express();
-
-// MiddleWare 
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -19,7 +16,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static('public'))
 
-// MiddleWare 
 
 
 
