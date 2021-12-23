@@ -1,22 +1,23 @@
 const express =require('express')
-const cors = require('cors')
 const app = express()
+const cors = require('cors')
+var bodyParser = require("body-parser") 
 const port = process.env.port || 4000;
 
 app.get('/' , (req,res)=>{ 
-res.send("Abe chaljjjj jaa bsdk");
+res.send("Abe chal jaa bsdk");
 });
 
 
 
-// app.use(
-//   bodyParser.urlencoded({
-//     extended: true,
-//   })
-// );
-// app.use(bodyParser.json());
-// app.use(cors());
-// app.use(express.static('public')) 
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(bodyParser.json());
+app.use(cors());
+app.use(express.static('public')) 
 
 
 

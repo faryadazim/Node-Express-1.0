@@ -1,0 +1,1 @@
+// here we define model function  nd cnnct with routes
