@@ -1,14 +1,29 @@
 const express =require('express')
 const cors = require('cors')
 const app = express()
-const port = process.env.port || 3000;
+const port = process.env.port || 4000;
 
-app.use('/' , (req,res)=>{ 
-res.send("Abe chal jaa bsdk");
+app.get('/' , (req,res)=>{ 
+res.send("Abe chaljjjj jaa bsdk");
 });
+
+
+
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: true,
+//   })
+// );
+// app.use(bodyParser.json());
+// app.use(cors());
+// app.use(express.static('public')) 
+
+
 
 var routes = require("./src/User/routes")
 app.use ('/routes',routes)
+
+ 
 
 app.listen(port, (err) => {
   if (err) {

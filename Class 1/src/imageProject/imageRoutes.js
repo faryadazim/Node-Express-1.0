@@ -10,18 +10,18 @@ router.get('/', (req,res)=>{
     res.send("workinf add Data")
 })
 
-router.get('/addData', (req,res)=>{   
-    // addData(req,res)
-    console.log("workinf add Data")
-    res.send("asdfghjkl;'")
-})
+// router.get('/addData', (req,res)=>{   
+//     // addData(req,res)
+//     console.log("workinf add Data")
+//     res.send("asdfghjkl;'")
+// })
 
 
-router.get('/deleteData', (req,res)=>{   
-    // addData(req,res)
-    console.log("workinf add Data")
-    res.send("faryaad")
-})
+// router.get('/deleteData', (req,res)=>{   
+//     // addData(req,res)
+//     console.log("workinf add Data")
+//     res.send("faryaad")
+// })
 
 
 
