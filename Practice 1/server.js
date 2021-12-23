@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 var bodyParser = require("body-parser");
+const dbConnection = require("./src/config/database");
+dbConnection();
 const port = process.env.port || 4000;
 
 // MiddleWare
