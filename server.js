@@ -1,16 +1,30 @@
 var express = require("express");
-const port = process.env.PORT || 3000;
-
 var app = express();
 
-app.use("/public", express.static(__dirname + "/public"));
+var bodyParser = require("body-parser");
+const port = process.env.PORT || 3000;
+// Middleware Custom ....
 
-app.get("/", function (req, res) {
-  res.send("Server is working");
+function middleware1(req, res, next) {
+  console.log(req.method, req.url, new Date());
+  next();
+}
+
+//.....................
+app.get("/", middleware1, function (req, res) {
+  console.log("its root");
+  res.send("Log");
 });
 
-app.get("/user", function (req, res) {
-  res.send("its user");
+// cookie
+app.get("/cookie", function (req, res) {
+  res.cookie("first", "look goog");
+  res.send("cookie");
+});
+
+app.get("/remove", function (req, res) {
+  res.clearCookie("first");
+  res.send("cookie removed");
 });
 
 app.listen(port, (err) => {
